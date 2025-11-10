@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/api")
+@RequestMapping(path = "api")
 public class LibroController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class LibroController {
         return this.libroServiceImpl.getLibros();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public Optional<Libro> getLibro(@PathVariable Long id) {
         return this.libroServiceImpl.getLibro(id);
     }
@@ -30,8 +30,8 @@ public class LibroController {
         this.libroServiceImpl.guardarOActualizarLibro(libro);
     }
 
-    @DeleteMapping("/{libroId}")
-    void eliminarLibro(@PathVariable("libroId") Long libroId) {
+    @DeleteMapping("{Id}")
+    void eliminarLibro(@PathVariable("Id") Long libroId) {
         this.libroServiceImpl.eliminarLibro(libroId);
     }
 }
