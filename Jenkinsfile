@@ -17,7 +17,13 @@ pipeline {
         stage ('Checkout del proyecto') {
             steps {
                 git branch: 'main'
-                    url: 'https://github.com/JSW03280/biblioteca'
+                    url: 'https://github.com/JSW03280/biblioteca.git'
+            }
+        }
+
+        stage ('Maven clean') {
+            steps {
+                mvn clean
             }
         }
     }
