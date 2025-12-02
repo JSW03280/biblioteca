@@ -16,7 +16,7 @@ pipeline {
 
         stage ('Checkout del proyecto') {
             steps {
-                git branch: 'main'
+                git branch: 'main',
                     url: 'https://github.com/JSW03280/biblioteca.git'
             }
         }
