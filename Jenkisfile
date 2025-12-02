@@ -7,7 +7,6 @@ pipeline {
     }
 
     stages {
-
         stage('Show messages') {
             steps {
                 bat 'Primer stage del pipeline'
