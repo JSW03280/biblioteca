@@ -9,7 +9,15 @@ pipeline {
     stages {
         stage('Show messages') {
             steps {
-                bat 'Primer stage del pipeline'
+                echo 'Primer stage del pipeline'
+                echo 'A continuacion hacemos checkout del proyecto'
+            }
+        }
+
+        stage ('Checkout del proyecto') {
+            steps {
+                git branch: 'main'
+                    url: 'https://github.com/JSW03280/biblioteca'
             }
         }
     }
