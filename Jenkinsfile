@@ -11,7 +11,7 @@ pipeline {
     }
 
     stages {
-        stage('Show messages') {
+        stage ('Show messages') {
             steps {
                 bat "echo 'Primer stage del pipeline'"
                 bat "echo 'A continuacion hacemos checkout del proyecto'"
@@ -34,6 +34,12 @@ pipeline {
         stage ('Crear directorio') {
             steps {
                 bat 'mkdir v%VERSION_BACK%'
+            }
+        }
+
+        stage ('Mover .jar') {
+            steps {
+                bat "move 'bilioteca-%VERSION_BACK%.jar' 'bilioteca-%VERSION_BACK%.jar.original' C:/ProgramData/Jenkins/.jenkins/workspace/Pipeline Basico/v2.0.1"
             }
         }
     }
