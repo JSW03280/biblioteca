@@ -33,7 +33,9 @@ pipeline {
 
         stage ('Crear directorio') {
             steps {
-                bat 'mkdir v%VERSION_BACK%'
+                bat 'IF EXIST "v%VERSION_BACK%" (
+                    ) ELSE (
+                    mkdir v%VERSION_BACK%)'
             }
         }
 
