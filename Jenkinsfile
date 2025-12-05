@@ -52,7 +52,7 @@ pipeline {
                 }
 
                 always {
-                    bat 'echo "Eta vaina ta plende"'
+                    bat 'echo "Eta vaina ta que plende"'
                 }
             }
         }
