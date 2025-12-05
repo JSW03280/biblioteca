@@ -57,6 +57,7 @@ pipeline {
             }
         }
 
+        /*
         stage ('Despliegue') {
             steps {
                 bat '''
@@ -65,5 +66,6 @@ pipeline {
                 '''
             }
         }
+        */
     }
 }
