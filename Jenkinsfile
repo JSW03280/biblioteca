@@ -39,7 +39,7 @@ pipeline {
 
         stage ('Mover .jar') {
             steps {
-                bat "move 'bilioteca-%VERSION_BACK%.jar' 'bilioteca-%VERSION_BACK%.jar.original' C:/ProgramData/Jenkins/.jenkins/workspace/Pipeline Basico/v2.0.1"
+                bat 'xcopy /Y ".\\target\\*.jar" ".\\v%VERSION_BACK%"'
             }
         }
     }
