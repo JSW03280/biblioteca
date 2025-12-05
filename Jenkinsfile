@@ -41,6 +41,20 @@ pipeline {
             steps {
                 bat 'xcopy /Y ".\\target\\*.jar" ".\\v%VERSION_BACK%"'
             }
+
+            post {
+                success {
+                    bat 'echo ".jar copiados"'
+                }
+
+                failure {
+                    bat 'echo "Error al copiar los ficheros"'
+                }
+
+                always {
+                    bat 'echo "Eta vaina ta plende"'
+                }
+            }
         }
     }
 }
